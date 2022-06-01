@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Signup{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <form method='post' action='/signup'>
+    {% csrf_token %}
+    <div class="my-3"><h2>Register</h2></div>
+    <div class="mb-3 my-4">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="enter your name">
+      </div>
+
+      <div class="mb-3 my-4">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name='email' placeholder="name@example.com">
+      </div>
+
+      <div class="mb-3 my-4">
+        <label for="dob" class="form-label">Date Of Birth</label>
+        <input type="date" class="form-control" id="dob" name="dob" placeholder="">
+      </div>
+
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="number" class="form-control" id="phone" name="phone" placeholder="10 digit number">
+      </div>
+
+      <div class="mb-3">
+        <label for="pass1" class="form-label">Password</label>
+        <input type="Password" class="form-control" id="pass1" name="pass1" placeholder="Can contain alphanumeric values">
+      </div>
+       
+      <div class="mb-3">
+        <label for="pass2" class="form-label">Confirm Password</label>
+        <input type="Password" class="form-control" id="pass2" name="pass2" placeholder="Confirm password">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+    </form>
+</div>
+ 
+{% endblock body %}
